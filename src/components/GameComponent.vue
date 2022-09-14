@@ -54,7 +54,6 @@ export default {
         },
       ],
       currentIndex: 0,
-      currentId: 0,
     };
   },
   methods: {
@@ -63,8 +62,13 @@ export default {
       let domandaGiusta = this.domande[this.currentIndex].rispostaEsatta;
       console.log(domanda);
       console.log(this.domande[this.currentIndex].rispostaEsatta);
+      console.log(this.currentIndex);
+      if (this.currentIndex == 3) {
+        this.currentIndex = 0;
+      }
       if (domandaScelta.localeCompare(domandaGiusta) == 0) {
         console.log("esatto!");
+
         this.currentIndex++;
       }
     },
